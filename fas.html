@@ -34,7 +34,10 @@
             window.addEventListener("orientationchange", handleResize, false);
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
-            stage.loadFile("data/fas.pdb", {defaultRepresentation: true});
+            stage.loadFile("data/fas.pdb", {defaultRepresentation: false}).then(function (o) {
+                o.addRepresentation("cartoon", {colorScheme: "residueindex"});
+                o.autoView();
+            });
         });
     </script>
     <div id="viewport" style="width:100%; height:100%;"></div>
