@@ -34,8 +34,8 @@
             window.addEventListener("orientationchange", handleResize, false);
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
-            stage.loadFile("data/6lu7.pdb", {defaultRepresentation: true}).then(function (o) {
-                o.addRepresentation("surface", {colorScheme: "electrostatic"});
+            stage.loadFile("data/6lu7.pdb", {defaultRepresentation: false}).then(function (o) {
+                o.addRepresentation("ribbon", {colorScheme: "electrostatic"});
                 o.autoView();
             });
         });
