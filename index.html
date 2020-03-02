@@ -34,7 +34,10 @@
             window.addEventListener("orientationchange", handleResize, false);
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
-            stage.loadFile("data/6lu7.pdb", {defaultRepresentation: true});
+            stage.loadFile("data/6lu7.pdb", {defaultRepresentation: true}).then(function (o) {
+                o.addRepresentation("ball+stick", {colorScheme: "bfactor"});
+                o.autoView();
+            });
         });
     </script>
     <div id="viewport" style="width:100%; height:100%;"></div>
