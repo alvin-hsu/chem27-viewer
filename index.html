@@ -34,10 +34,7 @@
             window.addEventListener("orientationchange", handleResize, false);
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
-            stage.loadFile("data/6lu7.pdb", {defaultRepresentation: false}).then(function (o) {
-                o.addRepresentation("spacefill", {colorScheme: "electrostatic"});
-                o.autoView();
-            });
+            stage.loadFile("data/6lu7.pdb", {defaultRepresentation: true});
         });
     </script>
     <div id="viewport" style="width:100%; height:100%;"></div>
