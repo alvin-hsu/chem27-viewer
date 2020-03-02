@@ -35,7 +35,7 @@
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
             stage.loadFile("data/6lu7.pdb", {defaultRepresentation: true}).then(function (o) {
-                o.addRepresentation("ball+stick", {colorScheme: "bfactor"});
+                o.addRepresentation("surface", {colorScheme: "electrostatic"});
                 o.autoView();
             });
         });
