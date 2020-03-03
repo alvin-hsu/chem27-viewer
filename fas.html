@@ -23,6 +23,10 @@
     <script src="js/ngl.js"></script>
     <script src="js/label.js"></script>
     <script>
+        const sleep = (milliseconds) => {
+            return new Promise(resolve => setTimeout(resolve, milliseconds))
+        }
+
         var labels = {1: "group1"};
         var stage;
         document.addEventListener("DOMContentLoaded", function () {
