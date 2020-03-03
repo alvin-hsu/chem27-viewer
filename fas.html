@@ -37,9 +37,22 @@
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
             stage.loadFile("data/fas.pdb", {defaultRepresentation: false}).then(function (o) {
-                o.addRepresentation("cartoon", {colorScheme: "residueindex"});
-                labelResidues(o, labels);
+                o.addRepresentation("cartoon", {
+                    sele: "/0",
+                    colorScheme: "residueindex"
+                });
                 o.autoView();
+            });
+
+            sleep(1000).then(() => {
+                stage.removeAllComponents();
+                stage.loadFile("data/fas.pdb", {defaultRepresentation: false}).then(function (o) {
+                    o.addRepresentation("cartoon", {
+                        sele: ":A/0",
+                        colorScheme: "residueindex"
+                    });
+                    o.autoView();
+                });
             });
         });
     </script>
