@@ -38,6 +38,7 @@
             stage.removeAllComponents();
             stage.loadFile("data/fas.pdb", {defaultRepresentation: false}).then(function (o) {
                 o.addRepresentation("cartoon", {colorScheme: "residueindex"});
+                labelResidues(o, labels);
                 o.autoView();
             });
         });
