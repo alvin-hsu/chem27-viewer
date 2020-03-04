@@ -32,16 +32,16 @@ function animate(stage, forward, reverse, ts) {
 
         player_f.signals.haltedRunning.add(function (e) {
             o_f.removeRepresentation(repr);
-            repr = o_r.addRepresentation('ball+stick');
+            repr = o_r.addRepresentation('licorice');
             player_r.play();
         });
         player_r.signals.haltedRunning.add(function (e) {
             o_r.removeRepresentation(repr);
-            repr = o_f.addRepresentation('ball+stick');
+            repr = o_f.addRepresentation('licorice');
             player_f.play();
         });
 
-        repr = o_f.addRepresentation('ball+stick');
+        repr = o_f.addRepresentation('licorice');
         o_f.autoView();
         player_f.play();
     });
