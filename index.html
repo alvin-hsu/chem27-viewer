@@ -20,23 +20,5 @@
     </style>
 </head>
 <body>
-    <script src="js/ngl.js"></script>
-    <script>
-        var stage;
-        document.addEventListener("DOMContentLoaded", function () {
-            stage = new NGL.Stage("viewport");
-            stage.viewer.container.addEventListener("dblclick", function () {
-                    stage.toggleFullscreen();
-            });
-            function handleResize () {
-                stage.handleResize();
-            }
-            window.addEventListener("orientationchange", handleResize, false);
-            window.addEventListener("resize", handleResize, false);
-            stage.removeAllComponents();
-            stage.loadFile("data/6lu7.pdb", {defaultRepresentation: true});
-        });
-    </script>
-    <div id="viewport" style="width:100%; height:100%;"></div>
 </body>
 </html>

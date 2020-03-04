@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Fatty Acid Synthase</title>
+    <title>NADH reduction</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <style>
@@ -34,12 +34,18 @@
             window.addEventListener("orientationchange", handleResize, false);
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
-            stage.loadFile("data/fas/fas.pdb", {defaultRepresentation: false}).then(function (o) {
-                o.addRepresentation("cartoon", {
-                    sele: "/0",
-                    colorScheme: "residueindex"
-                });
-                o.autoView();
+            stage.loadFile("data/nadh/stitched_f.pdb", {
+                defaultRepresentation: false,
+                asTrajectory: true,
+            }).then(function (o) {
+                o.addRepresentation("ball+stick")
+            });
+
+            stage.loadFile("data/nadh/stitched_r.pdb", {
+                defaultRepresentation: false
+                asTrajectory: true,
+            }).then(function (o) {
+                o.addRepresentation("ball+stick")
             });
         });
     </script>

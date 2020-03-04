@@ -27,7 +27,9 @@ def main():
     path = os.path.abspath(sys.argv[1])
     frames = glob.glob(path + '/*.xyz')
     frames.sort()
-    stitch(frames, path + '/stitched.pdb')
+    stitch(frames, path + '/stitched_f.pdb')
+    frames.sort(reverse=True)
+    stitch(frames, path + '/stitched_r.pdb')
 
 if __name__ == '__main__':
     main()
