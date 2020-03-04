@@ -21,6 +21,7 @@
 </head>
 <body>
     <script src="js/ngl.js"></script>
+    <script src="js/animate.js"></script>
     <script>
         var stage;
         document.addEventListener("DOMContentLoaded", function () {
@@ -34,19 +35,7 @@
             window.addEventListener("orientationchange", handleResize, false);
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
-            stage.loadFile("data/nadh/stitched_f.pdb", {
-                defaultRepresentation: false,
-                asTrajectory: true,
-            }).then(function (o) {
-                o.addRepresentation("ball+stick")
-            });
-
-            stage.loadFile("data/nadh/stitched_r.pdb", {
-                defaultRepresentation: false,
-                asTrajectory: true,
-            }).then(function (o) {
-                o.addRepresentation("ball+stick")
-            });
+            animate(stage, 'data/nadh/stitched_f.pdb', 'data/nadh/stitched_r.pdb', 66);
         });
     </script>
     <div id="viewport" style="width:100%; height:100%;"></div>
