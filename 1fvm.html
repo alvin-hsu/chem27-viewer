@@ -35,9 +35,9 @@
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
             stage.loadFile("data/nrps/1fvm.pdb", {defaultRepresentation: false}).then(function (o) {
-                o.addRepresentation("cartoon", {
+                o.addRepresentation("licorice", {
                     sele: "/0",
-                    colorScheme: "residueindex"
+                    colorScheme: "element"
                 });
                 o.autoView();
             });
