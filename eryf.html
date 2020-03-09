@@ -34,7 +34,7 @@
             window.addEventListener("orientationchange", handleResize, false);
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
-            stage.loadFile("data/nrps/eryf.pdb", {defaultRepresentation: false}).then(function (o) {
+            stage.loadFile("data/nrps/1z8o.pdb", {defaultRepresentation: false}).then(function (o) {
                 o.addRepresentation("cartoon", {
                     sele: "/0",
                     colorScheme: "residueindex"
