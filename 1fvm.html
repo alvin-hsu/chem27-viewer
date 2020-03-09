@@ -36,7 +36,7 @@
             stage.removeAllComponents();
             stage.loadFile("data/nrps/1fvm.pdb", {defaultRepresentation: false}).then(function (o) {
                 o.addRepresentation("licorice", {
-                    sele: "/0",
+                    sele: "ligand/0",
                     colorScheme: "element"
                 });
                 o.autoView();
