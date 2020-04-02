@@ -34,7 +34,7 @@
             window.addEventListener("orientationchange", handleResize, false);
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
-            stage.loadFile("data/glucose/linear_st.pdb", {defaultRepresentation: false}).then(function (o) {
+            stage.loadFile("data/glucose/linear.pdb", {defaultRepresentation: false}).then(function (o) {
                 o.addRepresentation("ball+stick", {
                     sele: "/0",
                     colorScheme: "element"
