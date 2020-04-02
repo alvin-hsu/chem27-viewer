@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Linear Glucose</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        input {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <script src="js/ngl.js"></script>
+    <script>
+        var stage;
+        document.addEventListener("DOMContentLoaded", function () {
+            stage = new NGL.Stage("viewport");
+            stage.viewer.container.addEventListener("dblclick", function () {
+                    stage.toggleFullscreen();
+            });
+            function handleResize () {
+                stage.handleResize();
+            }
+            window.addEventListener("orientationchange", handleResize, false);
+            window.addEventListener("resize", handleResize, false);
+            stage.removeAllComponents();
+            stage.loadFile("data/glucose/linear_st.pdb", {defaultRepresentation: false}).then(function (o) {
+                o.addRepresentation("ball+stick", {
+                    sele: "/0",
+                    colorScheme: "element"
+                });
+                o.autoView();
+            });
+        });
+    </script>
+    <div id="viewport" style="width:100%; height:100%;"></div>
+</body>
+</html>
