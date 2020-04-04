@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Cyclic Glucose</title>
+    <title>Aldol reaction</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <style>
@@ -21,6 +21,7 @@
 </head>
 <body>
     <script src="js/ngl.js"></script>
+    <script src="js/animate.js"></script>
     <script>
         var stage;
         document.addEventListener("DOMContentLoaded", function () {
@@ -34,13 +35,7 @@
             window.addEventListener("orientationchange", handleResize, false);
             window.addEventListener("resize", handleResize, false);
             stage.removeAllComponents();
-            stage.loadFile("data/glucose/cyclic.pdb", {defaultRepresentation: false}).then(function (o) {
-                o.addRepresentation("ball+stick", {
-                    sele: "/0",
-                    colorScheme: "element"
-                });
-                o.autoView();
-            });
+            animate(stage, 'data/aldol/stitched_f.pdb', 'data/aldol/stitched_r.pdb', 10);
         });
     </script>
     <div id="viewport" style="width:100%; height:100%;"></div>
